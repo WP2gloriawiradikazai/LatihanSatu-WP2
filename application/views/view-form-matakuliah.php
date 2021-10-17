@@ -10,6 +10,7 @@
 
 <body>
 <center>
+<?php //echo validation_errors(); ?>
 <form action="<?= base_url();?>matakuliah/cetak" method="post">
 
 <table>
@@ -24,12 +25,15 @@
     <tr>
         <th>Kode MTK</th>
         <th>:</th>
-        <th><input type="text" name="kode" placeholder="Input Kode MTK" maxlenght="10"></th>
+        <th><input type="text" name="kode" placeholder="Input Kode MTK" maxlenght="10">
+            <?= form_error('kode', '<small style="color:red">', '</small>');?></th>
     </tr>
+   
     <tr>
         <th>Nama MTK</th>
         <th>:</th>
-        <th><input type="text" name="nama" placeholder="Input Nama MTK" maxlenght="10"></th>
+        <th><input type="text" name="nama" placeholder="Input Nama MTK" maxlenght="50">
+        <?= form_error('nama', '<small style="color:red">', '</small>');?></th>
     </tr>
     <tr>
         <th>SKS</th>
@@ -40,7 +44,7 @@
                 <option value="3">3</option>
                 <option value="4">4</option>
             </select>
-        </th>
+            <?= form_error('sks', '<small style="color:red">', '</small>');?></th>
     </tr>
     <tr>
         <th colspan="3"><input type="submit" value="SUBMIT"></th>
